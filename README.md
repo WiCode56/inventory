@@ -3,7 +3,7 @@
 ## Instalasi
 #### Via Git
 ```bash
-
+https://github.com/WiCode56/inventory.git
 ```
 ### Setup Aplikasi
 Jalankan perintah 
