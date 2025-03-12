@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
+use Toast;
+
 
 class AuthController extends Controller
 {
@@ -28,12 +31,12 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            Session::flash('successlogin', 'success');
+            // Session::flash('successlogin', 'success');
+            toast('Anda berhasil login','success');
             return redirect()->intended('/');
         }
 
-        Session::flash('logingagal','failed');
-
+        toast('Anda gagal login','error');
         return redirect('/login');
     }
     public function register(){
@@ -65,9 +68,9 @@ class AuthController extends Controller
 
         $request ->session()->regenerateToken();
 
-        Session::flash('logout','logout');
-        Session::flash('message', 'logout berhasil!');
-
+        // Session::flash('logout','logout');
+        // Session::flash('message', 'logout berhasil!');
+        toast('Anda berhasil logout','success');
         return redirect('/login');
 
     }

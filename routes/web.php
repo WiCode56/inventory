@@ -20,7 +20,7 @@ use App\Http\Controllers\TransactionController;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'authenticating'])->middleware('guest');
@@ -30,11 +30,11 @@ Route::post('/regis', [AuthController::class, 'regis'])->name('register')->middl
 
 Route::get('/logout', [AuthController::class, 'logout'])->middleware(['auth']);
 
-Route::get('/product', [ProductController::class, 'index'])->middleware('auth');
-Route::get('product/{id}',[ProductController::class, 'show'])->middleware('auth');
-Route::get('/product-add', [ProductController::class, 'create'])->middleware('auth');
+Route::get('/product', [ProductController::class, 'index'])->name('product')->middleware('auth');
+Route::get('product/{id}',[ProductController::class, 'show'])->name('product.show')->middleware('auth');
+Route::get('/product-add', [ProductController::class, 'create'])->name('product.add')->middleware('auth');
 Route::post('/product-tambah', [ProductController::class, 'store'])->name('add.product')->middleware('auth');
-Route::get('/product-edit/{id}', [ProductController::class, 'edit'])->middleware('auth');
+Route::get('/product-edit/{id}', [ProductController::class, 'edit'])->name('product.edit')->middleware('auth');
 Route::put('/product/{id}', [ProductController::class, 'update'])->middleware('auth');
 Route::get('/product-delete/{id}', [ProductController::class, 'delete'])->middleware('auth');
 Route::delete('/product-destroy/{id}', [ProductController::class, 'destroy'])->middleware('auth');

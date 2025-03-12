@@ -11,9 +11,9 @@
     @csrf
     <div class="container mt-5 d-flex justify-content-center">
         <div class="card" style="width: 38rem;">
-            <div class="card-body ">
+            <div class="card-body py-4">
                 <div class="container-fluid">
-                    <h5 class="card-title text-center">Update Produk</h5>
+                    <h5 class="card-title text-start">Update Produk</h5>
                     <div class="form-group mt-3">
                         <label for="category_id">Kategori Barang</label>
 
@@ -78,11 +78,11 @@
                             </div>
                         @enderror
                     </div>
+                    <div class="form-group text-end mt-3">
+                        <button class="btn btn-dark" type="submit">Update</button>
+                        <a href="/product" class="btn btn-danger">Batal</a>
+                    </div>
                 </div>
-            </div>
-            <div class="container my-3 d-flex justify-content-center">
-                <button class="btn btn-dark mx-3" type="submit">Update</button>
-                <a href="/product" class="btn btn-danger mx-3">Batal</a>
             </div>
         </div>
 

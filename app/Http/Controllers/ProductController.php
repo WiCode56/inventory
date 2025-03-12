@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Toast;
 
 class ProductController extends Controller
 {
@@ -48,7 +49,7 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->validate([
+        $request->validate([
             'kd_barang' => 'required|unique:products,kd_barang',
             'name' => 'required|string',
             'description' => 'nullable|string',
@@ -69,6 +70,7 @@ class ProductController extends Controller
             'category_id.exists' => 'Kategori yang dipilih tidak ditemukan'
         ]);
 
+
         // dd($data);
 
         // Simpan produk ke database
@@ -83,7 +85,7 @@ class ProductController extends Controller
 
 
         if ($product) {
-            Session::flash('successtambah', 'success');
+            toast('Anda berhasil menambah data produk','success');
         }
 
         return redirect('/product');
@@ -100,10 +102,8 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->update($request->all());
 
-
-
         if($product){
-            Session::flash('successupdate', 'success');
+            toast('Anda berhasil update data produk','success');
         }
         return redirect('/product');
     }
@@ -118,12 +118,10 @@ class ProductController extends Controller
         $product->delete();
 
         if($product){
-            Session::flash('success', 'success');
-            Session::flash('message', 'delete Product Success!');
+            toast('Anda berhasil menghapus data produk','success');
         }
         else{
-            Session::flash('error','error');
-            Session::flash('message', 'delete Product Failed!');
+            toast('Anda gagal menghapus data produk','error');
         }
         return redirect('/product');
     }

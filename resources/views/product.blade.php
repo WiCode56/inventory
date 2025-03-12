@@ -71,7 +71,7 @@
         </div>
 
 
-        <table class="table table-bordered table-striped table-dark">
+        <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -90,18 +90,18 @@
 
                 @foreach ($productList as $data)
                 <tr>
-                    <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $data->kd_barang }}</td>
-                    <td>{{ $data->name }}</td>
-                    <td>{{ $data->description }}</td>
+                    <td scope="row">{{ $loop->iteration ?? 'tidak diisi' }}</td>
+                    <td>{{ $data->kd_barang ?? 'tidak diisi' }}</td>
+                    <td>{{ $data->name ?? 'tidak diisi' }}</td>
+                    <td>{{ $data->description ?? 'tidak diisi' }}</td>
                     <td>Rp. {{ number_format($data->price, 0 ,',', '.') }}/item</td>
-                    <td>{{ $data->tgl_rilis }}</td>
+                    <td>{{ $data->tgl_rilis ?? 'tidak diisi' }}</td>
                     @if (Auth::user()->role_id != 1)
                     @else
                     <td>
                         {{-- <a href="" class="btn btn-primary">Detail</a> --}}
-                        <a href="product-edit/{{ $data->id }}" class="btn btn-warning ms-3">Ubah</a>
-                        <a href="product-delete/{{ $data->id }}" class="btn btn-danger ms-3">Hapus</a>
+                        <a href="product-edit/{{ $data->id }}" class="btn btn-warning">Ubah</a>
+                        <a href="product-delete/{{ $data->id }}" class="btn btn-danger">Hapus</a>
                     </td>
                     @endif
                 </tr>

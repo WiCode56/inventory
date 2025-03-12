@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="form-group mt-3">
-                            <label for="kd_barang">Kode Barang</label>
+                            <label for="kd_barang">Kode Barang<span class="text-danger">*</span></label>
                             <input type="text" class="form-control @error('kd_barang') is-invalid @enderror"
                                 id="kd_barang" name="kd_barang" placeholder="Masukan Kode Barang....." readonly>
                             @error('kd_barang')
@@ -73,7 +73,7 @@
                         </script>
 
                         <div class="form-group mt-3">
-                            <label for="name">Nama Barang</label>
+                            <label for="name">Nama Barang<span class="text-danger">*</span></label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
                                 name="name" placeholder="Masukan Nama Barang.....">
                             @error('name')
@@ -83,7 +83,7 @@
                             @enderror
                         </div>
                         <div class="form-group mt-3">
-                            <label for="name">Harga</label>
+                            <label for="name">Harga<span class="text-danger">*</span></label>
                             <input type="number" class="form-control @error('price') is-invalid @enderror" id="price"
                                 name="price" placeholder="Masukan Harga Barang....." min="0">
                             @error('price')
@@ -93,7 +93,7 @@
                             @enderror
                         </div>
                         <div class="form-group mt-3">
-                            <label for="name">Tanggal Rilis</label>
+                            <label for="name">Tanggal Rilis<span class="text-danger">*</span></label>
                             <input type="datetime-local" class="form-control @error('tgl_rilis') is-invalid @enderror"
                                 id="tgl_rilis" name="tgl_rilis" placeholder="Masukan Tanggal Rilis.....">
                             @error('tgl_rilis')
@@ -103,7 +103,7 @@
                             @enderror
                         </div>
                         <div class="form-group mt-3">
-                            <label for="name">Deskripsi</label>
+                            <label for="name">Deskripsi <span>(Opsional)</span></label>
                             <textarea class="form-control @error('description') is-invalid @enderror" name="description"
                                 id="description" placeholder="Masukan Deskripsi Barang....."></textarea>
                             @error('description')
