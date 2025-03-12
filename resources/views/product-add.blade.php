@@ -10,11 +10,11 @@
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+            <li>{{ $error }}</li>
             @endforeach
         </ul>
     </div>
-@endif --}}
+    @endif --}}
 
 
     <div class="container d-flex justify-content-center" style="margin-top:100px;">
@@ -26,28 +26,31 @@
                         <h5 class="card-title text-start">Tambah Produk</h5>
                         <div class="form-group mt-3">
                             <label for="category_id">Kategori Barang</label>
-                            <select class="form-control @error('category_id') is-invalid @enderror" id="category_id" name="category_id">
+                            <select class="form-control @error('category_id') is-invalid @enderror" id="category_id"
+                                name="category_id">
                                 <option value="">-- Pilih Kategori --</option>
                                 @foreach($categories as $category)
-                                    <option value="{{ $category->id }}" data-prefix="{{ strtolower(substr($category->name, 0, 4)) }}">
-                                        {{ $category->name }}
-                                    </option>
+                                <option value="{{ $category->id }}"
+                                    data-prefix="{{ strtolower(substr($category->name, 0, 4)) }}">
+                                    {{ $category->name }}
+                                </option>
                                 @endforeach
                                 @error('category_id')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
-                            @enderror
+                                @enderror
                             </select>
                         </div>
 
                         <div class="form-group mt-3">
                             <label for="kd_barang">Kode Barang</label>
-                            <input type="text" class="form-control @error('kd_barang') is-invalid @enderror" id="kd_barang" name="kd_barang" placeholder="Masukan Kode Barang....." readonly>
+                            <input type="text" class="form-control @error('kd_barang') is-invalid @enderror"
+                                id="kd_barang" name="kd_barang" placeholder="Masukan Kode Barang....." readonly>
                             @error('kd_barang')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
                             @enderror
                         </div>
 
@@ -71,38 +74,42 @@
 
                         <div class="form-group mt-3">
                             <label for="name">Nama Barang</label>
-                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Masukan Nama Barang.....">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
+                                name="name" placeholder="Masukan Nama Barang.....">
                             @error('name')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
                             @enderror
                         </div>
                         <div class="form-group mt-3">
                             <label for="name">Harga</label>
-                            <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="Masukan Harga Barang....." min="0">
+                            <input type="number" class="form-control @error('price') is-invalid @enderror" id="price"
+                                name="price" placeholder="Masukan Harga Barang....." min="0">
                             @error('price')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
                             @enderror
                         </div>
                         <div class="form-group mt-3">
                             <label for="name">Tanggal Rilis</label>
-                            <input type="datetime-local" class="form-control @error('tgl_rilis') is-invalid @enderror" id="tgl_rilis" name="tgl_rilis" placeholder="Masukan Tanggal Rilis.....">
+                            <input type="datetime-local" class="form-control @error('tgl_rilis') is-invalid @enderror"
+                                id="tgl_rilis" name="tgl_rilis" placeholder="Masukan Tanggal Rilis.....">
                             @error('tgl_rilis')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
                             @enderror
                         </div>
                         <div class="form-group mt-3">
                             <label for="name">Deskripsi</label>
-                            <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" placeholder="Masukan Deskripsi Barang....."></textarea>
+                            <textarea class="form-control @error('description') is-invalid @enderror" name="description"
+                                id="description" placeholder="Masukan Deskripsi Barang....."></textarea>
                             @error('description')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
                             @enderror
                         </div>
 
@@ -110,14 +117,14 @@
                             <button class="btn btn-dark" type="submit">Tambah</button>
                             <a href="product" class="btn btn-danger">Batal</a>
                         </div>
-                        </div>
-
-
                     </div>
-                </div>
 
+
+                </div>
             </div>
-        </form>
+
     </div>
+    </form>
+</div>
 </div>
 @endsection
