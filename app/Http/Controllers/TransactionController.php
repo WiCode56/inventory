@@ -67,5 +67,8 @@ class TransactionController extends Controller
         }
         return redirect('/transaction');
     }
+    public function detail(){
+        return view('transaction-detail');
+    }
 
 }

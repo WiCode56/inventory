@@ -59,3 +59,5 @@ Route::get('/transaction-edit/{id}', [TransactionController::class, 'edit'])->mi
 Route::put('/transaction/{id}', [TransactionController::class, 'update'])->middleware('auth');
 Route::get('/transaction-delete/{id}', [TransactionController::class, 'delete'])->middleware('auth');
 Route::delete('/transaction-destroy/{id}', [TransactionController::class, 'destroy'])->middleware('auth');
+
+Route::get('/transaction-detail', [TransactionController::class, 'detail'])->middleware('auth');

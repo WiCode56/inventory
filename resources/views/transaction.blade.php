@@ -70,7 +70,7 @@
             </form>
         </div>
 
-        <table class="table table-bordered table-striped table-dark">
+        <table class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -84,22 +84,25 @@
             </thead>
             <tbody>
 
-                @foreach ($transactionList as $data)
+                {{-- @foreach ($transactionList as $data) --}}
                 <tr>
-                    <td scope="row">{{ $loop->iteration }}</td>
-                    {{-- <td>{{ $data->name }}</td>
-                    <td>{{ $data->email }}</td> --}}
+                    {{-- <td scope="row">{{ $loop->iteration }}</td> --}}
+                    <td scope="row">888</td>
+                    <td scope="row">888</td>
+                    <td scope="row">Halo</td>
 
-                    @if (Auth::user()->role_id != 1)
-                    @else
+
+                    {{-- @if (Auth::user()->role_id != 1) --}}
+                    {{-- @else --}}
                     <td>
                         {{-- <a href="" class="btn btn-primary">Detail</a> --}}
-                        <a href="transaction-edit/{{ $data->id }}" class="btn btn-warning ms-3">Ubah</a>
-                        <a href="transaction-delete/{{ $data->id }}" class="btn btn-danger ms-3">Hapus</a>
+                        {{-- <a href="transaction-edit/{{ $data->id }}" class="btn btn-warning ms-3">Ubah</a> --}}
+                        {{-- <a href="transaction-delete/{{ $data->id }}" class="btn btn-danger ms-3">Hapus</a> --}}
+                        <a href="transaction-detail" class="btn btn-primary">Detail</a>
                     </td>
-                    @endif
+                    {{-- @endif --}}
                 </tr>
-                @endforeach
+                {{-- @endforeach --}}
             </tbody>
         </table>
 

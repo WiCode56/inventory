@@ -24,7 +24,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <style>
-
+    body{
+        background-color: 	#F5F5F5;
+    }
 </style>
 <body>
 
